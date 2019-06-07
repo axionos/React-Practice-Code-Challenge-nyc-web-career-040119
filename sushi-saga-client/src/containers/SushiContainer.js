@@ -5,14 +5,20 @@ import Sushi from '../components/Sushi'
 const SushiContainer = (props) => {
   console.log('SushiContainer Props', props)
 
-  const randomFour = props.sushi.sort(() => 0.5 - Math.random()).slice(0, 4)
-  // console.log(randomFour)
+  // =================================================
+  // RENDER RANDOM 4 SUSHIS
+  // const randomFour = props.sushi.sort(() => 0.5 - Math.random()).slice(0, 4)
+  // =================================================
 
-  const renderSushi = randomFour.map(sushi => { return <Sushi
+  const sushiCopy = [...props.sushi]
+  // console.log('Sushi Copy', sushiCopy)
+
+  // RENDER 1ST TO 4TH SUSHI IN THE ARRAY
+  const renderSushi = sushiCopy.slice(0, 4).map(sushi => { return <Sushi
     key={sushi.id}
     name={sushi.name}
     price={sushi.price}
-    img_url={sushi.img_url}
+    imgUrl={sushi.img_url}
     />
   })
 

@@ -18,15 +18,12 @@ class Sushi extends React.Component {
     console.log('Sushi Props', this.props)
     console.log('Sushi State', this.state.isEaten)
 
-  // let url=`"${this.props.img_url}"`
-  // console.log(url)
-
   return (
     <div className="sushi">
       <div className="plate"
            onClick={this.handleClick}>
 
-        // {this.state.isEaten ? null : <img src={require(`"${this.props.img_url}"`)} width="100%" />}
+        {this.state.isEaten ? null : <img src={this.props.imgUrl} width="100%" />}
 
       </div>
       <h4 className="sushi-details">
