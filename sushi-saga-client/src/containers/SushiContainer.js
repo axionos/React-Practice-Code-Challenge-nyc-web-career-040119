@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import MoreButton from '../components/MoreButton'
 import Sushi from '../components/Sushi'
 
+
 const SushiContainer = (props) => {
   console.log('SushiContainer Props', props)
 
@@ -26,7 +27,8 @@ const SushiContainer = (props) => {
     <Fragment>
       <div className="belt">
         { renderSushi }
-        <MoreButton />
+        <MoreButton
+          genMoreSushi={props.genMoreSushi}/>
       </div>
     </Fragment>
   )

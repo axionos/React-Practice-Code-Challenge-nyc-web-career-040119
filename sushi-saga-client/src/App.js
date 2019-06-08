@@ -8,7 +8,7 @@ const API = "http://localhost:3000/sushis"
 class App extends Component {
   state = {
     sushi: []
-    // onConveyor: []
+
   }
 
   // FETCH DATA FROM API & UPDATE THE STATE
@@ -23,13 +23,24 @@ class App extends Component {
       })
   } // END FETCH
 
+
+  // MORE SUSHI BUTTON FOR NEXT 4 SUSHIS
+  genMoreSushi = () => {
+    const moreSushi = [...this.state.sushi]
+    this.setState({
+      sushi: moreSushi.slice(4)
+    })
+  } // END MORE SUSHI BTN
+
+
   render() {
     console.log("Current App State", this.state)
+
     return (
       <div className="app">
         <SushiContainer
           sushi={this.state.sushi}
-           />
+          genMoreSushi={this.genMoreSushi}/>
         <Table />
       </div>
     );
