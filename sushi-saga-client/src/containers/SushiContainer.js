@@ -20,8 +20,10 @@ const SushiContainer = (props) => {
     name={sushi.name}
     price={sushi.price}
     imgUrl={sushi.img_url}
+    platesEaten={props.platesEaten}
     />
-  })
+  }) // END RENDERING
+  
 
   return (
     <Fragment>

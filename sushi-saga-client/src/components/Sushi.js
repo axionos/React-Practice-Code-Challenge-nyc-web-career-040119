@@ -12,11 +12,13 @@ class Sushi extends React.Component {
     this.setState({
       isEaten: true
     })
+    this.props.platesEaten(this.props.name)
   }
 
   render(){
     console.log('Sushi Props', this.props)
-    console.log('Sushi State', this.state.isEaten)
+    console.log('Sushi State', this.state)
+    // console.log('Sushi State', this.state.isEaten)
 
   return (
     <div className="sushi">

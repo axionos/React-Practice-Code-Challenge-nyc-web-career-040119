@@ -7,8 +7,9 @@ const API = "http://localhost:3000/sushis"
 
 class App extends Component {
   state = {
-    sushi: []
-
+    sushi: [],
+    budget: 100,
+    platesEaten: []
   }
 
   // FETCH DATA FROM API & UPDATE THE STATE
@@ -22,6 +23,15 @@ class App extends Component {
         })
       })
   } // END FETCH
+
+
+  // RENDER EATEN PLATES
+  platesEaten = (name) => {
+    const copyPlatesEaten = [...this.state.platesEaten]
+    this.setState({
+      platesEaten: [...copyPlatesEaten, name]
+    })
+  } // END RENDERING EATEN PLATES
 
 
   // MORE SUSHI BUTTON FOR NEXT 4 SUSHIS
@@ -40,8 +50,11 @@ class App extends Component {
       <div className="app">
         <SushiContainer
           sushi={this.state.sushi}
-          genMoreSushi={this.genMoreSushi}/>
-        <Table />
+          genMoreSushi={this.genMoreSushi}
+          platesEaten={this.platesEaten}/>
+        <Table
+          budget={this.state.budget}
+          platesEatenStatus={this.state.platesEaten}/>
       </div>
     );
   }
