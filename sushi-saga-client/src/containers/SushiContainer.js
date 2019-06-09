@@ -4,7 +4,7 @@ import Sushi from '../components/Sushi'
 
 
 const SushiContainer = (props) => {
-  console.log('SushiContainer Props', props)
+  console.log('Sushi Container Props', props)
 
   // =================================================
   // RENDER RANDOM 4 SUSHIS
@@ -21,9 +21,11 @@ const SushiContainer = (props) => {
     price={sushi.price}
     imgUrl={sushi.img_url}
     platesEaten={props.platesEaten}
+    budget={props.budget}
+    balance={props.balance}
     />
   }) // END RENDERING
-  
+
 
   return (
     <Fragment>

@@ -43,6 +43,14 @@ class App extends Component {
   } // END MORE SUSHI BTN
 
 
+  // UPDATE THE BUDGET AMOUNT
+  balance = (newBalance) => {
+    this.setState({
+      budget: newBalance
+    })
+  } // END UPDATING
+
+
   render() {
     console.log("Current App State", this.state)
 
@@ -51,7 +59,9 @@ class App extends Component {
         <SushiContainer
           sushi={this.state.sushi}
           genMoreSushi={this.genMoreSushi}
-          platesEaten={this.platesEaten}/>
+          platesEaten={this.platesEaten}
+          budget={this.state.budget}
+          balance={this.balance}/>
         <Table
           budget={this.state.budget}
           platesEatenStatus={this.state.platesEaten}/>
